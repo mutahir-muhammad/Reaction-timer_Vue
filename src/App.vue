@@ -1,31 +1,30 @@
 <template>
-  <div id="app">
-    <h1>Reaction Timer Game</h1>
-    <button @click="start">Fire Game</button>
-    <BlockComp />
+  <div>
+    <h1>Ninja Reaction Timer</h1>
+    <button @click="start" :disabled="isPlaying">play</button>
+    <BlockComp v-if="isPlaying" :delay="delay" />
   </div>
 </template>
 
 <script>
-import BlockComp from "./components/BlockComp.vue";
+import BlockComp from './components/BlockComp.vue'
+
 export default {
-  name: "App",
+  name: 'App',
   components: { BlockComp },
-};
-</script>
-
-<script setup>
-import { ref } from "vue";
-
-const data = ref({
-  isPlaying: false,
-  delay: null,
-});
-
-function start() {
-  data.value.delay = 2000 + Math.random() * 5000;
-  data.value.isPlaying = true;
-  console.log(data.value.delay);
+  data() {
+    return {
+      isPlaying: false,
+      delay: null,
+    }
+  },
+  methods: {
+    start() {
+      // set time amount (ms)
+      this.delay = 2000 + Math.random() * 5000
+      this.isPlaying = true
+    },
+  }
 }
 </script>
 
@@ -37,5 +36,22 @@ function start() {
   text-align: center;
   color: #444;
   margin-top: 60px;
+}
+
+button {
+  background: #0faf87;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button[disabled] {
+  opacity: 0.2;
+  cursor: not-allowed;
 }
 </style>
