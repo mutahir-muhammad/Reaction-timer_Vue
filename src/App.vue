@@ -2,12 +2,15 @@
   <div id="app">
     <h1>Reaction Timer Game</h1>
     <button @click="start">Fire Game</button>
+    <Block />
   </div>
 </template>
+
 <script>
+import Block from "./components/Block.vue";
 export default {
   name: "App",
-  components: {},
+  components: { Block },
 };
 </script>
 
@@ -20,9 +23,9 @@ const data = ref({
 });
 
 function start() {
-  data.delay.value = 2000 + Math.random() * 5000;
-  data.isPlaying.value = true;
-  console.log(data.delay.value);
+  data.value.delay = 2000 + Math.random() * 5000;
+  data.value.isPlaying = true;
+  console.log(data.value.delay);
 }
 </script>
 
