@@ -2,15 +2,15 @@
   <div id="app">
     <h1>Reaction Timer Game</h1>
     <button @click="start">Fire Game</button>
-    <Block />
+    <BlockComp />
   </div>
 </template>
 
 <script>
-import Block from "./components/Block.vue";
+import BlockComp from "./components/BlockComp.vue";
 export default {
   name: "App",
-  components: { Block },
+  components: { BlockComp },
 };
 </script>
 
