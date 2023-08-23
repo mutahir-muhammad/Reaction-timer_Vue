@@ -2,20 +2,24 @@
   <div>
     <h1>Ninja Reaction Timer</h1>
     <button @click="start" :disabled="isPlaying">play</button>
-    <BlockComp v-if="isPlaying" :delay="delay" />
+    <BlockComp v-if="isPlaying" :delay="delay" @end="end" />
+    <ResultsComp v-if="showResult" :score="score" />
   </div>
 </template>
 
 <script>
 import BlockComp from './components/BlockComp.vue'
+import ResultsComp from './components/ResultsComp.vue'
 
 export default {
   name: 'App',
-  components: { BlockComp },
+  components: { BlockComp, ResultsComp },
   data() {
     return {
       isPlaying: false,
       delay: null,
+      score: null,
+      showResult: false,
     }
   },
   methods: {
@@ -23,14 +27,20 @@ export default {
       // set time amount (ms)
       this.delay = 2000 + Math.random() * 5000
       this.isPlaying = true
+      this.showResult = false
     },
+    end(result){
+      this.score = result
+      this.isPlaying = false
+      this.showResult = true
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
