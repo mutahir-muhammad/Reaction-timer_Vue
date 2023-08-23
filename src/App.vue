@@ -39,17 +39,18 @@ export default {
 </script>
 
 <style>
-#app {
+*{
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #444;
-  margin-top: 60px;
+  color: #d8d8d8;
+  background-color: #444;
+  margin-top: 30px;
 }
 
 button {
-  background: #0faf87;
+  background: #159251;
   color: white;
   border: none;
   padding: 8px 16px;

@@ -25,8 +25,8 @@ export default {
   methods: {
     startTimer(){
       this.timer = setInterval(() => {
-        this.reactionTime += 10
-      }, 10)
+        this.reactionTime += 8
+      }, 8)
     },
     stopTimer(){
       clearInterval(this.timer)
@@ -41,7 +41,7 @@ export default {
   .block {
     width: 400px;
     border-radius: 20px;
-    background:  #0faf87;;
+    background:  rgb(16, 123, 59);;
     color: white;
     text-align: center;
     padding: 100px 0;
