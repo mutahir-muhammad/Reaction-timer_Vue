@@ -1,6 +1,6 @@
 <template>
   <div class="block" v-if="showBlock" @click="stopTimer">
-    click me
+    Click me!
   </div>
 </template>
 
@@ -15,11 +15,9 @@ export default {
     }
   },
   mounted(){
-    console.log("the Component is mounted"),
     setTimeout(() => {
       this.showBlock = true
       this.startTimer()
-      console.log(this.delay)
     }, this.delay)
   },
   methods: {
@@ -30,7 +28,6 @@ export default {
     },
     stopTimer(){
       clearInterval(this.timer)
-      console.log(this.reactionTime)
       this.$emit('end', this.reactionTime)
     }
   }
@@ -39,9 +36,11 @@ export default {
 
 <style>
   .block {
+    font-weight: 800;
+    font-size: 24px;
     width: 400px;
-    border-radius: 20px;
-    background:  rgb(16, 123, 59);;
+    border-radius: 80%;
+    background:  rgb(37, 151, 83);
     color: white;
     text-align: center;
     padding: 100px 0;

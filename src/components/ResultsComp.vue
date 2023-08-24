@@ -18,10 +18,10 @@ export default {
             this.rank = "Noice!"
         }
         else if (this.score < 400) {
-            this.rank = "Great Reflexes"
+            this.rank = "Great Reflexes!"
         }
         else {
-            this.rank = "Slowpoke...try again later"
+            this.rank = "Slowpoke...try again later :)"
         }
     }
 }
@@ -29,8 +29,8 @@ export default {
 
 <style>
 .rank {
-    font-size: 1.4em;
-    color: #0faf90;
+    font-size: 22px;
+    color: rgb(25, 213, 138);
     font-weight: bold;
 }
 </style>

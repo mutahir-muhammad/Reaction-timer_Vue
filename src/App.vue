@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Ninja Reaction Timer</h1>
-    <button @click="start" :disabled="isPlaying">play</button>
+    <h1>Check your reflexes</h1>
+    <button @click="start" :disabled="isPlaying">PLAY</button>
     <BlockComp v-if="isPlaying" :delay="delay" @end="end" />
     <ResultsComp v-if="showResult" :score="score" />
   </div>
